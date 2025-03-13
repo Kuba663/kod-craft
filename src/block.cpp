@@ -42,6 +42,11 @@ bool Block::isSolid() {
     return this->propeties->solid;
 }
 
+bool Block::isVisible()
+{
+    return this->propeties->visible;
+}
+
 EntityPosition Block::checkCollision(Hitbox* hitbox, WorldPos x, WorldPos y, WorldPos z) {
     for (int i = 0; i < this->propeties->hitboxes.size(); i++) {
         EntityPosition delta = hitbox->collideWithBlock(this->propeties->hitboxes[i], x, y, z);
